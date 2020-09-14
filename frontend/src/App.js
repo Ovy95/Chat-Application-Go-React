@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import ChatHistory from './components/ChatHistory/ChatHistory';
 import ChatInput from './components/ChatInput/ChatInput'
+
 import './App.css';
 import { connect, sendMsg } from './api';
 
@@ -36,7 +37,7 @@ class App extends Component {
       <Header />
       <ChatHistory chatHistory={this.state.chatHistory} />
       <ChatInput send={this.send} />
-      <button onClick={this.send}>Hit</button>
+   
     </div>
   );
  }
