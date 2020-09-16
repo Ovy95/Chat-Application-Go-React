@@ -7,7 +7,7 @@ class ChatHistory extends Component {
   render() {
       console.log(this.props.chatHistory);
   const messages = this.props.chatHistory.map(msg => <Message key={msg.timeStamp} message={msg.data} />);
-
+  messages.reverse();
   return (
     <div className='ChatHistory'>
       <h2>Chat History</h2>
