@@ -1,15 +1,16 @@
 .Message {
+  text-align: center;
   display: block;
-  background-color: white;
+  background-color: rgb(230, 230, 230);
   margin: 10px auto;
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
+  padding: 10px 30px;
   border-radius: 5px;
   clear: both;
 
   &.me {
-    color: white;
-    float: right;
-    background-color: #328ec4;
+    color: rgb(53, 44, 182);
+    float: left;
+    background-color: #6532c4;
   }
 }
