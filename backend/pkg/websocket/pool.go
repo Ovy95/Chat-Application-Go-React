@@ -20,13 +20,23 @@ func NewPool() *Pool {
 
 func (pool *Pool) Start() {
 	for {
+
 		select {
 		case client := <-pool.Register:
 			pool.Clients[client] = true
 			fmt.Println("Size of Connection Pool: ", len(pool.Clients))
 			for client, _ := range pool.Clients {
-				fmt.Println(client)
-				client.Conn.WriteJSON(Message{Type: 1, Body: "New User Joined..."})
+
+				client.ID = "New Guest Entered"
+				fmt.Printf("Message type is: %+v\n", client)
+				fmt.Println("....")
+
+				fmt.Println("....")
+				//fmt.Printf("Message type is: %+v\n", client.Conn)
+				fmt.Println("....")
+				//fmt.Printf("Message type is: %+v\n", client.Pool)
+				fmt.Println("....")
+				client.Conn.WriteJSON(Message{Type: 1, Body: "New User Joined...", ID: ""})
 			}
 			break
 		case client := <-pool.Unregister:

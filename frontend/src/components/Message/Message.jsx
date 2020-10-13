@@ -6,12 +6,14 @@ class Message extends Component {
     super(props);
     let temp = JSON.parse(this.props.message);
     this.state = {
-      message: temp
+      type: temp,
+      message: temp,
+      ID: temp,
     };
   }
 
   render() {
-    return <div className="Message">{this.state.message.body}</div>;
+    return <div className="Message">Username:"{this.state.message.id}"  Message:"{this.state.message.body}" {this.state.message.type}</div>;
   }
 }
 
